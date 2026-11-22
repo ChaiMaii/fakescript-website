@@ -198,8 +198,10 @@ main.content {
   flex-wrap: wrap;
 }
 
-.navbar .logo img {
+.navbar .logo img,
+.navbar .logo svg.fks-logo {
   height: 1.5em;
+  width: auto;
   margin-right: var(--gap-1);
 }
 
@@ -210,9 +212,11 @@ main.content {
   white-space: nowrap;
 }
 
-.logo img {
+.logo img,
+.logo svg.fks-logo {
   display: inline-block;
   height: 1.3em;
+  width: auto;
   margin-right: 0.25em;
 }
 
@@ -222,7 +226,7 @@ main.content {
   width: 280px;
   margin: 0 var(--gap-5) var(--gap-2) var(--gap-5);
   overflow: hidden;
-  /* Needed to not cut Lucy's corners when rotating: */
+  /* Needed to not cut corners when animating: */
   padding: var(--gap-1);
   box-sizing: content-box;
 }
@@ -233,16 +237,25 @@ main.content {
   transition: transform 0.2s ease;
 }
 
-.navbar-lucy,
-.footer-lucy {
-  transition: transform 200ms ease;
+.fks-letters {
+  transform-box: view-box;
+  transform-origin: 140px 146px;
+  transform: rotate(38deg);
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.logo:hover .navbar-lucy,
-.logo:hover .footer-lucy,
-.hero-lucy-container:hover .hero-lucy {
-  content: url("../images/fakescript-logo-happy.svg");
-  transform: rotate(12deg);
+.logo:hover .fks-letters,
+.hero-lucy-container:hover .fks-letters {
+  transform: rotate(398deg);
+}
+
+.footer .fks-pentagon {
+  fill: transparent;
+  stroke: var(--color-faff-pink);
+}
+
+.footer .fks-letters {
+  stroke: var(--color-faff-pink);
 }
 
 .navbar a {
