@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 268" fill="none">
+  <defs>
+    <linearGradient id="fks-bg" x1="28" y1="22" x2="252" y2="236" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#a6f0fc"/>
+      <stop offset="55%" stop-color="#ffaff3"/>
+      <stop offset="100%" stop-color="#fffbe8"/>
+    </linearGradient>
+  </defs>
+  <!-- Speech bubble mascot body -->
+  <path d="M52 38 C52 24 64 14 78 14 H202 C226 14 246 34 246 58 V164 C246 188 226 208 202 208 H124 L76 248 C70 253 60 248 61 240 L65 208 H58 C44 208 34 196 34 182 V58 C34 46 42 38 52 38 Z" fill="url(#fks-bg)" stroke="#292d3e" stroke-width="12" stroke-linejoin="round"/>
+  <!-- Cute eyes -->
+  <circle cx="108" cy="108" r="14" fill="#292d3e"/>
+  <circle cx="176" cy="108" r="14" fill="#292d3e"/>
+  <circle cx="113" cy="103" r="5" fill="#fefefc"/>
+  <circle cx="181" cy="103" r="5" fill="#fefefc"/>
+  <!-- Rosy cheeks -->
+  <ellipse cx="80" cy="128" rx="14" ry="8" fill="#ff7ad9" opacity="0.55"/>
+  <ellipse cx="204" cy="128" rx="14" ry="8" fill="#ff7ad9" opacity="0.55"/>
+  <!-- Friendly smile -->
+  <path d="M122 134 C132 150 152 150 162 134" stroke="#292d3e" stroke-width="9" stroke-linecap="round"/>
+  <!-- Small sparkle -->
+  <path d="M226 42 L231 54 L243 59 L231 64 L226 76 L221 64 L209 59 L221 54 Z" fill="#fefefc" stroke="#292d3e" stroke-width="4" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="../images/fakescript-logo.svg">
+  <title>Install | FakeScript programming language</title>
+  <meta name="description" content="Install and build the FakeScript compiler (fksc) on Windows, Linux, Debian, and macOS.">
+  <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+  <div class="page-header">
+    <nav class="navbar">
+      <div class="content">
+        <div>
+          <a href="../" class="logo">
+            <img alt="FakeScript mascot" src="../images/fakescript-logo.svg" class="navbar-lucy">
+            FakeScript
+          </a>
+        </div>
+        <div>
+          <a href="../examples/">Examples</a>
+          <a href="https://github.com/ChaiMaii/fakescript">GitHub</a>
+        </div>
+        <div>
+          <a href="https://chaimaii.github.io/fakescript-docs/">Docs</a>
+          <a href="../install/">Install</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <div class="content">
+        <div class="text">
+          <h1>Install FakeScript</h1>
+          <p class="hero-subtitle">Zero dependencies beyond Go 1.22+. Build fksc in under a second.</p>
+        </div>
+      </div>
+      <img alt="a soft wavey boundary between two sections of the website" src="../images/waves.svg" class="home-waves">
+    </div>
+  </div>
+
+  <main class="page content">
+    <h2>Build from source</h2>
+    <p>
+      The entire FakeScript compiler lives in a single Go source file (<code>fksc.go</code>) using only the Go standard library.
+      Clone the repository and compile it for your platform:
+    </p>
+
+    <h3>Windows (PowerShell)</h3>
+    <pre><code>git clone https://github.com/ChaiMaii/fakescript.git
+cd fakescript
+go build -o fksc.exe fksc.go
+.\fksc.exe run examples\showcase.fks</code></pre>
+
+    <h3>Linux / Debian / macOS</h3>
+    <pre><code>git clone https://github.com/ChaiMaii/fakescript.git
+cd fakescript
+go build -o fksc fksc.go
+./fksc run examples/showcase.fks</code></pre>
+
+    <h2>CLI commands</h2>
+    <pre><code>fksc build program.fks    # Compile to a standalone native binary
+fksc run program.fks      # Compile and run immediately
+fksc emit program.fks     # Print formatted Go source code
+fksc check program.fks    # Lex, parse, and type-check only
+fksc version              # Print compiler version</code></pre>
+
+    <p>
+      Ready to learn the language? Head over to the
+      <a href="https://chaimaii.github.io/fakescript-docs/guide/getting-started">FakeScript Documentation</a>.
+    </p>
+  </main>
+
+  <footer class="footer">
+    <div class="content">
+      <div class="first">
+        <a href="../" class="logo">
+          <img alt="FakeScript mascot" src="../images/fakescript-logo.svg" class="footer-lucy">
+          FakeScript
+        </a>
+      </div>
+      <ul class="middle">
+        <li><a href="https://chaimaii.github.io/fakescript-docs/">Documentation</a></li>
+        <li><a href="../install/">Install</a></li>
+        <li><a href="../examples/">Examples</a></li>
+        <li><a href="https://github.com/ChaiMaii/fakescript">Compiler Repo</a></li>
+        <li><a href="https://github.com/ChaiMaii/fakescript-docs">Docs Repo</a></li>
+        <li><a href="https://github.com/ChaiMaii/fakescript-website">Website Repo</a></li>
+      </ul>
+      <ul class="last">
+        <li>Apache License 2.0</li>
+        <li>Design adapted from <a href="https://github.com/gleam-lang/website">gleam-lang/website</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

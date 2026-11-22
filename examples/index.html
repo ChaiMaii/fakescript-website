@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="../images/fakescript-logo.svg">
+  <title>Examples | FakeScript programming language</title>
+  <meta name="description" content="Explore real FakeScript v3.0 programs — zero symbols, native speed.">
+  <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+  <div class="page-header">
+    <nav class="navbar">
+      <div class="content">
+        <div>
+          <a href="../" class="logo">
+            <img alt="FakeScript mascot" src="../images/fakescript-logo.svg" class="navbar-lucy">
+            FakeScript
+          </a>
+        </div>
+        <div>
+          <a href="../examples/">Examples</a>
+          <a href="https://github.com/ChaiMaii/fakescript">GitHub</a>
+        </div>
+        <div>
+          <a href="https://chaimaii.github.io/fakescript-docs/">Docs</a>
+          <a href="../install/">Install</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <div class="content">
+        <div class="text">
+          <h1>Examples</h1>
+          <p class="hero-subtitle">Real FakeScript programs with strictly zero punctuation symbols.</p>
+        </div>
+      </div>
+      <img alt="a soft wavey boundary between two sections of the website" src="../images/waves.svg" class="home-waves">
+    </div>
+  </div>
+
+  <main class="page content">
+    <h2>Lazy thunks &amp; loops</h2>
+    <pre><code><span class="code-comment">note pure zero symbol fakescript program</span>
+
+<span class="code-keyword">import</span> <span class="code-module">print</span> <span class="code-keyword">as</span> <span class="code-module">print</span>
+
+<span class="code-keyword">let</span> printtrue <span class="code-keyword">be</span> <span class="code-fn">ln</span> <span class="code-keyword">of</span> <span class="code-module">print</span> <span class="code-keyword">contains</span> <span class="code-string">say true end</span>
+<span class="code-keyword">let</span> i <span class="code-keyword">be</span> <span class="code-number">0</span>
+
+<span class="code-keyword">fn</span> <span class="code-fn">countup</span> <span class="code-keyword">do</span>
+  <span class="code-keyword">loop when</span> i <span class="code-operator">is under</span> <span class="code-number">5</span> <span class="code-keyword">do</span>
+    <span class="code-fn">ln</span> <span class="code-keyword">of</span> <span class="code-module">print</span> <span class="code-keyword">contains</span> i
+    <span class="code-keyword">set</span> i <span class="code-keyword">to</span> i <span class="code-operator">plus</span> <span class="code-number">1</span>
+  <span class="code-keyword">end</span>
+<span class="code-keyword">end</span>
+
+<span class="code-keyword">fn</span> <span class="code-fn">main</span> <span class="code-keyword">do</span>
+  printtrue
+  <span class="code-keyword">exec</span> <span class="code-fn">countup</span>
+  <span class="code-keyword">if</span> i <span class="code-operator">is</span> <span class="code-number">5</span> <span class="code-keyword">do</span>
+    <span class="code-fn">ln</span> <span class="code-keyword">of</span> <span class="code-module">print</span> <span class="code-keyword">contains</span> <span class="code-string">say all done end</span>
+  <span class="code-keyword">end</span>
+<span class="code-keyword">end</span>
+
+<span class="code-keyword">exec</span> <span class="code-fn">main</span></code></pre>
+
+    <h2>Lists, stdlib &amp; interactive input</h2>
+    <pre><code><span class="code-keyword">import</span> <span class="code-module">print</span>
+<span class="code-keyword">import</span> <span class="code-module">text</span>
+
+<span class="code-keyword">fn</span> <span class="code-fn">main</span> <span class="code-keyword">do</span>
+  <span class="code-keyword">ask</span> <span class="code-string">say Enter your name  end</span> <span class="code-keyword">into</span> name
+  <span class="code-keyword">ask</span> <span class="code-type">num</span> <span class="code-string">say Enter your birth year  end</span> <span class="code-keyword">into</span> year
+  <span class="code-keyword">let</span> age <span class="code-keyword">be</span> <span class="code-number">2026</span> <span class="code-operator">minus</span> year
+  <span class="code-keyword">let</span> loud <span class="code-keyword">be</span> <span class="code-fn">upper</span> <span class="code-keyword">of</span> <span class="code-module">text</span> <span class="code-keyword">contains</span> name
+  <span class="code-fn">ln</span> <span class="code-keyword">of</span> <span class="code-module">print</span> <span class="code-keyword">contains</span> <span class="code-string">say Hello end</span> <span class="code-keyword">and</span> loud <span class="code-keyword">and</span> <span class="code-string">say you are about end</span> <span class="code-keyword">and</span> age
+<span class="code-keyword">end</span>
+
+<span class="code-keyword">exec</span> <span class="code-fn">main</span></code></pre>
+
+    <p>
+      See the full language reference and standard library at
+      <a href="https://chaimaii.github.io/fakescript-docs/">FakeScript Docs</a>.
+    </p>
+  </main>
+
+  <footer class="footer">
+    <div class="content">
+      <div class="first">
+        <a href="../" class="logo">
+          <img alt="FakeScript mascot" src="../images/fakescript-logo.svg" class="footer-lucy">
+          FakeScript
+        </a>
+      </div>
+      <ul class="middle">
+        <li><a href="https://chaimaii.github.io/fakescript-docs/">Documentation</a></li>
+        <li><a href="../install/">Install</a></li>
+        <li><a href="../examples/">Examples</a></li>
+        <li><a href="https://github.com/ChaiMaii/fakescript">Compiler Repo</a></li>
+        <li><a href="https://github.com/ChaiMaii/fakescript-docs">Docs Repo</a></li>
+        <li><a href="https://github.com/ChaiMaii/fakescript-website">Website Repo</a></li>
+      </ul>
+      <ul class="last">
+        <li>Apache License 2.0</li>
+        <li>Design adapted from <a href="https://github.com/gleam-lang/website">gleam-lang/website</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="./images/fakescript-logo.svg">
+  <title>FakeScript programming language</title>
+  <meta name="description" content="Discover FakeScript — a strictly zero-symbol, type-safe, Ahead-of-Time compiled programming language written in plain English words.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="FakeScript programming language">
+  <meta property="og:description" content="A strictly zero-symbol, type-safe, Ahead-of-Time compiled programming language written in plain English words.">
+  <link rel="stylesheet" href="./styles/main.css">
+  <link rel="preload" as="image" href="./images/fakescript-logo-happy.svg">
+</head>
+<body>
+  <div class="page-header">
+    <nav class="navbar">
+      <div class="content">
+        <div>
+          <a href="./" class="logo">
+            <img alt="FakeScript mascot" src="./images/fakescript-logo.svg" class="navbar-lucy">
+            FakeScript
+          </a>
+        </div>
+        <div>
+          <a href="./examples/">Examples</a>
+          <a href="https://github.com/ChaiMaii/fakescript">GitHub</a>
+        </div>
+        <div>
+          <a href="https://chaimaii.github.io/fakescript-docs/">Docs</a>
+          <a href="./install/">Install</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <div class="content">
+        <div class="hero-lucy-container wide-only">
+          <img alt="FakeScript mascot" src="./images/fakescript-logo.svg" class="hero-lucy">
+        </div>
+        <div class="text-left">
+          <div class="text">
+            <div>
+              <b>FakeScript</b> is a <b>zero-symbol</b> language for building <b>type-safe</b> native programs that run <b>fast</b>!
+            </div>
+            <a href="https://chaimaii.github.io/fakescript-docs/" class="button">Read the Docs</a>
+          </div>
+        </div>
+      </div>
+      <img alt="a soft wavey boundary between two sections of the website" src="./images/waves.svg" class="home-waves">
+    </div>
+  </div>
+
+  <main role="main">
+    <section class="content home-pair intro">
+      <div>
+        <p>
+          Strictly zero punctuation symbols — no braces, no quotes, no parentheses, no semicolons.
+          Every construct is written in plain English words and Ahead-of-Time compiled into standalone native binaries.
+        </p>
+      </div>
+      <pre><code><span class="code-keyword">import</span> <span class="code-module">print</span>
+
+<span class="code-keyword">fn</span> <span class="code-fn">main</span> <span class="code-keyword">do</span>
+  <span class="code-fn">ln</span> <span class="code-keyword">of</span> <span class="code-module">print</span> <span class="code-keyword">contains</span> <span class="code-string">say hello friend end</span>
+<span class="code-keyword">end</span>
+
+<span class="code-keyword">exec</span> <span class="code-fn">main</span></code></pre>
+    </section>
+
+    <section class="content home-pair">
+      <div>
+        <h2>Native AOT speed</h2>
+        <p>
+          FakeScript is never interpreted. The <code>fksc</code> compiler lowers <code>.fks</code> programs through a full Lexer, Recursive-Descent Parser, Type Checker, and Go Code Generator into unboxed native machine code.
+        </p>
+        <p>
+          With native <code>int64</code> arithmetic, zero boxing, and direct function calls, recursive <code>fib 32</code> computes in under 10 milliseconds.
+        </p>
+      </div>
+      <pre><code><span class="code-keyword">fn</span> <span class="code-fn">fib</span> <span class="code-keyword">with</span> <span class="code-type">num</span> n <span class="code-keyword">returns</span> <span class="code-type">num</span> <span class="code-keyword">do</span>
+  <span class="code-keyword">if</span> n <span class="code-operator">is at most</span> <span class="code-number">1</span> <span class="code-keyword">do</span>
+    <span class="code-keyword">give back</span> n
+  <span class="code-keyword">end</span>
+  <span class="code-keyword">let</span> a <span class="code-keyword">be</span> <span class="code-keyword">exec</span> <span class="code-fn">fib</span> <span class="code-keyword">with</span> n <span class="code-operator">minus</span> <span class="code-number">1</span>
+  <span class="code-keyword">let</span> b <span class="code-keyword">be</span> <span class="code-keyword">exec</span> <span class="code-fn">fib</span> <span class="code-keyword">with</span> n <span class="code-operator">minus</span> <span class="code-number">2</span>
+  <span class="code-keyword">give back</span> a <span class="code-operator">plus</span> b
+<span class="code-keyword">end</span></code></pre>
+    </section>
+
+    <section class="content home-pair">
+      <div>
+        <h2>Ready when you are</h2>
+        <p>
+          The entire <code>fksc</code> compiler lives in a single zero-dependency Go file. Build it once with <code>go build -o fksc fksc.go</code> and enjoy a symbol-free CLI right out of the box.
+        </p>
+        <p>
+          Run scripts immediately with <code>fksc run</code>, inspect formatted Go output with <code>fksc emit</code>, or type-check in milliseconds with <code>fksc check</code>.
+        </p>
+      </div>
+      <pre><code><span class="code-prompt">➜ (main)</span> fksc check examples/showcase.fks
+<span class="code-success">OK examples/showcase.fks</span>
+<span class="code-prompt">➜ (main)</span> fksc run examples/showcase.fks
+<span class="code-operator">FakeScript v3 Showcase</span>
+abs of -42 is 42
+2 to the 10 is 1024
+grouped math 20
+joined fruits apple and blueberry and cherry
+total score 213
+<span class="code-success">fib 32 is 2178309 computed in 9 ms</span></code></pre>
+    </section>
+
+    <section class="content home-pair">
+      <div>
+        <h2>Here to help</h2>
+        <p>
+          A strict zero-symbol lexer and two-pass static type checker catch stray punctuation, type mismatches, arity errors, and invalid loop control before a single binary is built.
+        </p>
+      </div>
+      <pre><code><span class="code-error">app.fks:4: error:</span> symbol "=" is not allowed in FakeScript
+  use plain English keywords only
+  | let score = 42
+
+<span class="code-error">app.fks:8: error:</span> cannot assign text to variable "score" of type num
+  | set score to say ninety end</code></pre>
+    </section>
+
+    <section class="content home-pair">
+      <div>
+        <h2>Lazy actions &amp; batteries included</h2>
+        <p>
+          Assigning a void action to a variable automatically creates a deferred thunk that runs only when invoked later — paired with block-level lexical scoping, typed lists, and interactive <code>ask</code> standard input.
+        </p>
+        <p>
+          Built-in <code>print</code>, <code>math</code>, <code>text</code>, <code>file</code>, and <code>time</code> modules emit only the Go standard library imports your program actually uses.
+        </p>
+      </div>
+      <pre><code><span class="code-keyword">import</span> <span class="code-module">print</span>
+<span class="code-keyword">import</span> <span class="code-module">text</span>
+
+<span class="code-comment">note deferred lazy thunk</span>
+<span class="code-keyword">let</span> greet <span class="code-keyword">be</span> <span class="code-fn">ln</span> <span class="code-keyword">of</span> <span class="code-module">print</span> <span class="code-keyword">contains</span> <span class="code-string">say welcome end</span>
+
+<span class="code-keyword">let</span> items <span class="code-keyword">be</span> <span class="code-keyword">list of</span> <span class="code-string">say apple end</span> <span class="code-keyword">and</span> <span class="code-string">say cherry end</span> <span class="code-keyword">end</span>
+<span class="code-keyword">for each</span> item <span class="code-keyword">in</span> items <span class="code-keyword">do</span>
+  <span class="code-fn">ln</span> <span class="code-keyword">of</span> <span class="code-module">print</span> <span class="code-keyword">contains</span> <span class="code-fn">upper</span> <span class="code-keyword">of</span> <span class="code-module">text</span> <span class="code-keyword">contains</span> item
+<span class="code-keyword">end</span>
+greet</code></pre>
+    </section>
+
+    <section class="home-friendly">
+      <div class="content">
+        <h2>Pure English, Zero Noise</h2>
+        <p>
+          FakeScript is an open-source experiment in pushing readable, punctuation-free syntax all the way to a real, fast, statically typed native compiler.
+        </p>
+        <p>
+          Licensed under Apache 2.0 — clone the compiler, read the docs, write a <code>.fks</code> program, and see how clean code looks without a single symbol.
+        </p>
+      </div>
+      <img alt="a soft wavey boundary between two sections of the website" src="./images/waves.svg" class="home-waves">
+    </section>
+
+    <section class="home-still-here">
+      <div class="content">
+        <h2>You're still here?</h2>
+        <p class="go-read">
+          Well, that's all this page has to say. Maybe you should go read the documentation or install <code>fksc</code>!
+        </p>
+        <a href="https://chaimaii.github.io/fakescript-docs/" class="button">Let's go!</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="content">
+      <div class="first">
+        <a href="./" class="logo">
+          <img alt="FakeScript mascot" src="./images/fakescript-logo.svg" class="footer-lucy">
+          FakeScript
+        </a>
+      </div>
+      <ul class="middle">
+        <li><a href="https://chaimaii.github.io/fakescript-docs/">Documentation</a></li>
+        <li><a href="./install/">Install</a></li>
+        <li><a href="./examples/">Examples</a></li>
+        <li><a href="https://github.com/ChaiMaii/fakescript">Compiler Repo</a></li>
+        <li><a href="https://github.com/ChaiMaii/fakescript-docs">Docs Repo</a></li>
+        <li><a href="https://github.com/ChaiMaii/fakescript-website">Website Repo</a></li>
+      </ul>
+      <ul class="last">
+        <li>Apache License 2.0</li>
+        <li>Design adapted from <a href="https://github.com/gleam-lang/website">gleam-lang/website</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>
