@@ -48,6 +48,17 @@
   </div>
 
   <main class="page content">
+    <h2>Quick install (fksc + fkspm)</h2>
+    <p>
+      Requires Go 1.22+. Run the visual installer to install both <code>fksc</code> and <code>fkspm</code> and add them to your <code>PATH</code>:
+    </p>
+
+    <h3>Windows (PowerShell)</h3>
+    <pre><code>irm https://raw.githubusercontent.com/ChaiMaii/fakescript/main/install.ps1 | iex</code></pre>
+
+    <h3>Linux / Debian / macOS</h3>
+    <pre><code>curl -fsSL https://raw.githubusercontent.com/ChaiMaii/fakescript/main/install.sh | sh</code></pre>
+
     <h2>Build from source</h2>
     <p>
       The entire FakeScript compiler lives in a single Go source file (<code>fksc.go</code>) using only the Go standard library.
